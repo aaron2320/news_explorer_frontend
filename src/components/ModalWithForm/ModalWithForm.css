@@ -1,0 +1,202 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal_opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__content {
+  width: 100%;
+  max-width: 430px;
+  background-color: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 34px 36px 28px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M32.8452 7.15483C33.5513 7.86094 33.5513 9.00231 32.8452 9.70842L22.5519 20.0001L32.8452 30.2917C33.5513 30.9978 33.5513 32.1392 32.8452 32.8453C32.1391 33.5514 30.9977 33.5514 30.2916 32.8453L20.0001 22.5519L9.70839 32.8453C9.00229 33.5514 7.86091 33.5514 7.1548 32.8453C6.4487 32.1392 6.4487 30.9978 7.1548 30.2917L17.4483 20.0001L7.1548 9.70842C6.4487 9.00231 6.4487 7.86094 7.1548 7.15483C7.86091 6.44873 9.00229 6.44873 9.70839 7.15483L20.0001 17.4482L30.2916 7.15483C30.9977 6.44873 32.1391 6.44873 32.8452 7.15483Z" fill="white"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal__title {
+  margin: 0 0 22px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: var(--font-size-xl);
+  color: #1a1b22;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInDown 0.5s forwards 0.1s;
+  text-align: left;
+  width: 100%;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__submit-button {
+  margin-top: 24px;
+  background-color: #2f71e5;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  width: 100%;
+  height: 64px;
+}
+
+.modal__submit-button_disabled {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  cursor: not-allowed;
+}
+
+.modal__submit-button:hover:not(.modal__submit-button_disabled) {
+  background-color: #347eff;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__content {
+    max-width: 380px;
+    padding: 36px;
+  }
+
+  .modal__close-button {
+    right: -30px;
+    top: -30px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L13.4142 12L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3166 20.0976 18.6834 20.0976 18.2929 19.7071L12 13.4142L5.70711 19.7071C5.31658 20.0976 4.68342 20.0976 4.29289 19.7071C3.90237 19.3166 3.90237 18.6834 4.29289 18.2929L10.5858 12L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L12 10.5858L18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289Z" fill="white"/></svg>');
+  }
+}
+
+/* Add specific styles for 320px width mobile screens */
+@media screen and (max-width: 480px) {
+  .modal {
+    align-items: flex-start; /* Position at the top to leave space for nav bar */
+  }
+
+  .modal__content {
+    width: 100%; /* Full width */
+    max-width: 100%;
+    height: calc(100vh - 56px); /* Full height minus 56px for nav bar */
+    border-radius: 0; /* Remove border radius for full-width look */
+    border-top-left-radius: 16px; /* Add rounded corners to the top */
+    border-top-right-radius: 16px; /* Add rounded corners to the top */
+    padding: 16px 16px 150px; /* Specific padding as requested */
+    box-sizing: border-box;
+    margin-top: 56px;
+    position: relative;
+  }
+
+  .modal__close-button {
+    /* Position close button exactly 16px above the modal content */
+    position: absolute;
+    top: -16px; /* Exactly 16px above the top edge of modal content */
+    transform: translateY(-100%); /* Move it up by its own height */
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background-image: none; /* Remove the SVG background */
+  }
+
+  /* Create X with CSS similar to navigation close icon */
+  .modal__close-button::before,
+  .modal__close-button::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white; /* White color for better visibility against dark overlay */
+    top: 50%;
+    left: 0;
+  }
+
+  .modal__close-button::before {
+    transform: rotate(45deg);
+  }
+
+  .modal__close-button::after {
+    transform: rotate(-45deg);
+  }
+
+  .modal__title {
+    line-height: 28px; /* Specific line height */
+    margin-bottom: 11px; /* Specific bottom margin */
+  }
+
+  .modal__submit-button {
+    width: 288px; /* Set width to 288px */
+    height: 64px; /* Ensure height is 64px */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+  }
+}
+
+/* Modal input placeholder text color */
+.modal__input::placeholder {
+  color: #bcbcbf;
+  opacity: 1; /* For Firefox */
+}
+
+/* Standard color for placeholder text in other browsers */
+.modal__input::-webkit-input-placeholder {
+  color: #bcbcbf;
+}
+
+.modal__input::-moz-placeholder {
+  color: #bcbcbf;
+}
+
+.modal__input:-ms-input-placeholder {
+  color: #bcbcbf;
+}
+
+.modal__input::-ms-input-placeholder {
+  color: #bcbcbf;
+}

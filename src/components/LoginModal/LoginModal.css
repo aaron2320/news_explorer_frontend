@@ -1,0 +1,86 @@
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-s);
+  color: #2f71e5;
+  text-align: left;
+  width: 100%;
+}
+
+.modal__input {
+  margin-top: 2px;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-m);
+  line-height: 1.5;
+  width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.modal__input:focus {
+  outline: none;
+  border-bottom-color: #2f71e5;
+  background-color: transparent;
+}
+
+.modal__input:-webkit-autofill,
+.modal__input:-webkit-autofill:hover,
+.modal__input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.login-modal__footer {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-modal__text {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-s);
+  color: #666;
+  margin: 0;
+}
+
+.login-modal__link {
+  background: none;
+  border: none;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-s);
+  color: #2f71e5;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.login-modal__link:hover {
+  color: #347eff;
+  text-decoration: underline;
+}
+
+/* Add specific styling for mobile screens */
+@media screen and (max-width: 480px) {
+  .modal__label {
+    margin-bottom: 16px; /* Exactly 16px between inputs */
+  }
+}
+
+/* Add specific styling for 320px width */
+@media screen and (max-width: 320px) {
+  .login-modal__footer {
+    margin-top: 16px; /* Exactly 16px below the submit button */
+    text-align: center;
+  }
+
+  /* Labels should maintain their original order */
+  .modal__label {
+    margin-bottom: 16px; /* Same 16px spacing for consistency */
+  }
+}

@@ -1,0 +1,142 @@
+.mobile-modal {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.mobile-modal_opened {
+  display: none; /* Still hidden by default, will be shown only through media queries */
+}
+
+.mobile-modal__content {
+  position: relative;
+  width: 100%;
+  height: 174px; /* Specified height of 174px matching previous dropdown */
+  background-color: #1a1b22; /* Exact color code - not darkened */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Position content at bottom for button placement */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Add subtle shadow for depth */
+  padding-bottom: 24px; /* Add bottom padding for button */
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Add subtle gray border line at the top */
+}
+
+/* Overlay styling */
+.mobile-modal_opened::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 174px;
+  background-color: #1a1b22;
+  z-index: -1;
+}
+
+/* Home link styling */
+.mobile-modal__home-link {
+  position: absolute;
+  left: 16px;
+  bottom: 130px; /* Moved up by 20px from 110px */
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none; /* No underline */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-modal__home-link:hover {
+  opacity: 0.8;
+}
+
+/* Saved articles link styling */
+.mobile-modal__saved-link {
+  position: absolute;
+  left: 16px;
+  bottom: 90px; /* Moved up by 20px from 70px */
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none; /* No underline */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-modal__saved-link:hover {
+  opacity: 0.8;
+}
+
+/* Logout button styling */
+.mobile-modal__logout-button {
+  width: 288px;
+  height: 56px;
+  background-color: #1a1b22; /* Same color as modal background */
+  color: white;
+  border: 1px solid white;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 auto; /* Center button horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-modal__logout-button:hover {
+  opacity: 0.8;
+}
+
+.mobile-modal__username {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Sign in button styling */
+.mobile-modal__signin-button {
+  width: 288px;
+  height: 56px;
+  background-color: #1a1b22; /* Same color as modal background */
+  color: white;
+  border: 1px solid white;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 auto; /* Center button horizontally */
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-modal__signin-button:hover {
+  opacity: 0.8;
+}
+
+/* Only show the modal at 580px and below */
+@media screen and (max-width: 580px) {
+  .mobile-modal_opened {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* At 320px, ensure perfect alignment with the nav bar */
+@media screen and (max-width: 320px) {
+  .mobile-modal__content {
+    height: 174px; /* Maintain consistent height */
+  }
+}

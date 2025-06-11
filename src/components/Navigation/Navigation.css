@@ -1,0 +1,392 @@
+/* Hide mobile menu button by default */
+.navigation__mobile-menu {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  box-shadow: none;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 104px;
+}
+
+.navigation__left {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__right {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__logo {
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  flex: 0 0 auto;
+  margin-right: 40px;
+}
+
+.navigation__links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-right: 16px;
+  padding-right: -20px;
+}
+
+.navigation__link {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  padding: 25px 8px 13px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.navigation__link--saved {
+  margin-right: 0;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.navigation__link:hover {
+  border-bottom: 3px solid #fff;
+}
+
+.navigation__link_active {
+  border-bottom: 3px solid #fff;
+}
+
+.navigation__buttons {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+.navigation__button {
+  padding: 12px 20px;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 48px;
+  width: auto;
+  min-width: 100px;
+  margin-left: 32px;
+}
+
+.navigation__button_type_login {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  min-width: 100px;
+  line-height: 24px;
+  width: 176px;
+}
+
+.navigation__button_type_register {
+  background-color: #2f71e5;
+  border: none;
+  color: #fff;
+}
+
+.navigation__button_type_logout {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 112px;
+}
+
+.navigation__logout-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.navigation__username {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Styles for saved articles page */
+.navigation--saved-articles .navigation__link {
+  color: #1a1b22;
+  padding-top: 20px;
+}
+
+.navigation--saved-articles .navigation__link:hover {
+  border-bottom: 3px solid #1a1b22;
+}
+
+.navigation--saved-articles .navigation__link_active {
+  border-bottom: 3px solid #1a1b22;
+  width: auto;
+  max-width: 160px;
+}
+
+/* Adjust the saved articles link positioning */
+.navigation--saved-articles .navigation__link--saved {
+  margin-right: 0;
+  padding-left: 30px;
+}
+
+.navigation--saved-articles .navigation__logo {
+  color: #1a1b22;
+}
+
+.navigation--saved-articles .navigation__button_type_login {
+  border: 1px solid #1a1b22;
+  color: #1a1b22;
+}
+
+.navigation--saved-articles .navigation__button_type_logout {
+  border: 1px solid #1a1b22;
+  color: #1a1b22;
+}
+
+.navigation--saved-articles .navigation__username {
+  color: #1a1b22;
+}
+
+.navigation--saved-articles .navigation__logout-icon {
+  filter: invert(0.8);
+}
+
+/* Navigation close icon */
+.navigation__close-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.navigation__close-icon::before,
+.navigation__close-icon::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  left: 0;
+}
+
+.navigation__close-icon::before {
+  transform: rotate(45deg);
+}
+
+.navigation__close-icon::after {
+  transform: rotate(-45deg);
+}
+
+/* Mobile open state styling */
+.navigation--mobile-open {
+  background-color: #1a1b22 !important; /* Exact color code to match modal content */
+  z-index: 10; /* Ensure the navigation stays on top */
+  border-bottom: none; /* Remove any border that might interfere with the appearance */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Match the shadow from the modal content */
+}
+
+/* Change logo color to white when menu is open, even on saved articles page */
+.navigation--saved-articles.navigation--mobile-open .navigation__logo {
+  color: white;
+}
+
+/* Change close icon color to white when menu is open */
+.navigation--saved-articles.navigation--mobile-open
+  .navigation__close-icon::before,
+.navigation--saved-articles.navigation--mobile-open
+  .navigation__close-icon::after {
+  background-color: white; /* Keep white on black background */
+}
+
+/* Media queries */
+@media screen and (max-width: 1100px) {
+  .navigation {
+    padding: 0 40px;
+  }
+
+  .navigation__button_type_logi {
+    width: 152px;
+  }
+
+  .navigation__logo {
+    margin-left: 0;
+  }
+
+  .navigation__right {
+    margin-right: 0;
+  }
+
+  .navigation__button {
+    margin-left: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    height: 40px;
+  }
+
+  .navigation--saved-articles .navigation__link_active {
+    width: auto;
+    padding-left: 15px;
+  }
+
+  .navigation__link {
+    font-size: 16px;
+    padding: 15px 8px 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 0 30px;
+  }
+
+  .navigation__button {
+    margin-left: 15px;
+    padding: 8px 12px;
+  }
+
+  .navigation__links {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 0 40px;
+  }
+
+  .navigation__logo {
+    font-size: 18px;
+  }
+
+  .navigation__button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    height: 36px;
+    min-width: 80px;
+  }
+
+  .navigation__links {
+    gap: 12px;
+  }
+
+  .navigation__link {
+    font-size: 14px;
+    padding: 12px 6px 10px;
+  }
+}
+
+/* Add specific breakpoint for 600px to maintain consistent margins */
+
+@media screen and (max-width: 768px) {
+  .navigation__logo {
+    font-size: 16px; /* Consistent margin between 600px and 480px */
+  }
+
+  .navigation__button {
+    margin-left: 20px;
+  }
+
+  .navigation--saved-articles .navigation__link_active {
+    width: 100px;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .navigation {
+    position: relative;
+    padding: 16px;
+    height: 56px;
+    transition: all 0.3s ease;
+  }
+
+  .navigation.navigation--saved-articles {
+    padding: 0 16px;
+  }
+
+  .navigation__logo {
+    margin: 0;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 16px;
+    z-index: 2; /* Keep logo on top */
+  }
+
+  .navigation__right {
+    display: none;
+  }
+
+  .navigation__mobile-menu {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    z-index: 2; /* Keep button on top */
+  }
+
+  /* When mobile menu is open */
+  .navigation--mobile-open {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Position the close button at same position as mobile icon */
+  .navigation__mobile-menu--open {
+    top: 16px;
+    right: 16px;
+  }
+
+  /* Special styling for saved articles page at mobile size */
+  .navigation--saved-articles {
+    background-color: white;
+  }
+
+  .navigation--saved-articles .navigation__logo {
+    color: #1a1b22;
+    margin: 0;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 16px;
+  }
+
+  .navigation--saved-articles .navigation__mobile-menu {
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Close icon for saved articles page */
+  .navigation--saved-articles .navigation__close-icon::before,
+  .navigation--saved-articles .navigation__close-icon::after {
+    background-color: black; /* Black close icon on white background */
+  }
+}

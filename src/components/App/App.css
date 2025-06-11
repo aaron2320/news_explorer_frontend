@@ -1,0 +1,83 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Ensure header title doesn't inherit styles */
+.header__title {
+  color: #fff !important;
+}
+
+/* Navigation container for saved articles page */
+.navigation-container {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  height: 80px; /* Match the header__nav-container height */
+  display: flex;
+  align-items: flex-end; /* Align navigation to bottom of container */
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.1);
+  /* Slightly thicker but still subtle gray border line */
+}
+
+/* Custom cursor for all main buttons */
+.navigation__button,
+.search-form__button,
+.news-card__save-button,
+.news-card-list__show-more,
+.modal__submit-button,
+.modal__close-button,
+.success-modal__close-button,
+.news-card__button--remove {
+  cursor: url("../../assets/Custom-Cursor.svg"), pointer !important;
+}
+
+/* Media queries to match header responsiveness */
+@media screen and (max-width: 768px) {
+  .navigation-container {
+    height: auto;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); /* Slightly thicker but still subtle gray border line */
+  }
+}
+
+/* Add specific breakpoint for 600px to maintain consistent margins */
+@media screen and (max-width: 480px) {
+  .navigation-container {
+    height: auto;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); /* Slightly thicker but still subtle gray border line */
+  }
+}
+
+body::after {
+  content: "Desktop — 1000px+";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body::after {
+    content: "Tablet — ≤768px";
+    background: #007bff;
+  }
+}
+
+@media (max-width: 480px) {
+  body::after {
+    content: "Mobile — ≤480px";
+    background: #28a745;
+  }
+}
