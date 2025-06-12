@@ -12,7 +12,7 @@ function Navigation({
   onRegisterClick,
   currentPath,
   isLoggedIn,
-  userName = "Test",
+  userName = "TestUser",
 }) {
   // State to track if mobile modal is open
   const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
