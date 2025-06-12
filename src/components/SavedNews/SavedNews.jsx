@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SavedNews.css";
 import NewsCard from "../NewsCard/NewsCard";
 
-function SavedNews({ isLoggedIn, onLoginClick, user = { name: "Elliot" } }) {
+function SavedNews({ isLoggedIn, onLoginClick, user = { name: "Aaron" } }) {
   const [savedArticles, setSavedArticles] = useState(() => {
     // Initialize with data from localStorage
     const articles = JSON.parse(localStorage.getItem("savedArticles") || "[]");
