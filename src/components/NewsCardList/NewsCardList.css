@@ -1,0 +1,95 @@
+.news-card-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.news-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 32px 0;
+  list-style: none;
+  justify-items: stretch;
+  padding: 0;
+  box-sizing: border-box;
+  align-self: flex-start;
+}
+
+.news-card-list li {
+  list-style: none;
+}
+
+.news-card-list__show-more {
+  width: 288px;
+  height: 64px;
+  background-color: #ffffff;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 80px;
+  margin: 0 auto 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.news-card-list__show-more:hover {
+  background-color: #e8e8e8;
+  color: #000;
+}
+
+.news-card-list__show-more:active {
+  transform: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .news-card-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .news-card-list__show-more {
+    width: 288px;
+    height: 64px;
+    font-size: 16px;
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .news-card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .news-card-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .news-card-list__show-more {
+    width: calc(100% - 32px);
+    max-width: 288px;
+    height: 56px;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Add specific styling for 320px width to match SavedNews */

@@ -1,0 +1,115 @@
+/* Font Face Declarations */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-500.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-700.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-900.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/roboto-slab-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/roboto-slab-700.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter-500.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Global Font settings */
+
+:root {
+  /* Font families */
+  --font-family-main: "Roboto", Arial, sans-serif;
+  --font-family-headers: "Roboto Slab", Georgia, serif;
+  --font-family-alternative: "Inter", Arial, sans-serif;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Font sizes */
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 30px;
+  --font-size-xxxl: 40px;
+
+  /* Line heights */
+  --line-height-xs: 1.2;
+  --line-height-s: 1.4;
+  --line-height-m: 1.5;
+  --line-height-l: 1.6;
+}
+
+body {
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-headers);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}

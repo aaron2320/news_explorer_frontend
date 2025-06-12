@@ -1,0 +1,193 @@
+.header {
+  background-image: url("../../assets/Header_Background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  min-height: 576px; /* Increased height to ensure full coverage */
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.header__nav-container {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 -1px #fff3 inset;
+}
+
+.header__logo-container {
+  max-width: 200px;
+}
+
+.header__text-container {
+  margin: 0 auto;
+  max-width: 608px;
+  width: 608px; /* Set fixed width to match title and subtitle */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+  padding-top: 80px;
+  box-sizing: border-box;
+  align-items: center; /* Center the content */
+}
+
+.header__title {
+  font-size: 60px;
+  font-family: var(--font-family-headers);
+  font-weight: var(--font-weight-regular);
+  line-height: 64px;
+  color: #fff !important;
+  margin: 0 auto; /* Center the title */
+  width: 608px; /* Set fixed width */
+  max-width: 608px; /* Ensure it doesn't exceed this width */
+  box-sizing: border-box;
+  text-align: left; /* Left-align the text for block style */
+}
+
+.header__subtitle {
+  margin: 32px auto 0; /* Center the subtitle with top margin */
+  color: #fff;
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+  line-height: 24px;
+  padding-top: 0; /* Remove padding */
+  width: 608px; /* Set fixed width */
+  max-width: 608px; /* Ensure it doesn't exceed this width */
+  box-sizing: border-box;
+  text-align: center; /* Center the text */
+}
+
+.header__logo {
+  font-family: var(--font-family-headers);
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    min-height: 400px;
+  }
+
+  .header__nav-container {
+    padding: 0px; /* Adjusted padding for tablets */
+  }
+
+  .header__text-container {
+    width: 460px; /* Maintain fixed width */
+    max-width: 460px; /* Ensure it doesn't exceed this width */
+    padding-top: 38px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Center the container */
+    align-items: flex-start; /* Align to the left for tablet */
+  }
+
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    padding: 0;
+    margin: 0;
+    color: #fff !important;
+    max-width: 385px;
+    width: 385px; /* Set fixed width for tablet */
+    text-align: left;
+  }
+
+  .header__subtitle {
+    padding: 23px 0 0 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 452px;
+    width: 452px; /* Set fixed width for tablet */
+    text-align: left;
+  }
+}
+
+/* Add specific breakpoint for 600px to maintain consistent margins */
+@media screen and (max-width: 650px) {
+  .header__nav-container {
+    padding: 0 24px; /* Consistent padding between 600px and 480px */
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    min-height: 350px;
+  }
+
+  .header__nav-container {
+    margin: 0px; /* Adjusted padding for mobile */
+    padding: 0px;
+  }
+
+  .header__text-container {
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
+    padding-top: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 400;
+    padding-top: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    color: #fff !important;
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
+  }
+
+  .header__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    min-height: 536px; /* Increased height to accommodate repositioned search form */
+  }
+
+  .header__text-container {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: left;
+    padding: 30px 0 0 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 16px 0 0 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+  }
+}

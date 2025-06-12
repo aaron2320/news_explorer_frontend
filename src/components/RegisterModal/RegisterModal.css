@@ -1,0 +1,28 @@
+.register-modal__footer {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.register-modal__text {
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-s);
+  color: #666;
+  margin: 0;
+}
+
+.register-modal__link {
+  background: none;
+  border: none;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-s);
+  color: #2f71e5;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.register-modal__link:hover {
+  color: #347eff;
+  text-decoration: underline;
+}
