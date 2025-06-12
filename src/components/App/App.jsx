@@ -122,7 +122,7 @@ function App() {
             onRegisterClick={handleRegisterClick}
             currentPath={location.pathname}
             isLoggedIn={isLoggedIn}
-            userName="Elliot"
+            userName="Aaron"
           />
         </div>
       )}
@@ -149,7 +149,7 @@ function App() {
             <SavedNews
               isLoggedIn={isLoggedIn}
               onLoginClick={handleLoginClick}
-              user={{ name: "Elliot" }}
+              user={{ name: "Aaron" }}
             />
           }
         />
