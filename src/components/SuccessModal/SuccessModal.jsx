@@ -18,6 +18,20 @@ function SuccessModal({ isOpen, onClose, onSignInClick }) {
       <button
         type="submit"
         className="success-modal__sign-in"
+        style={{
+          background: "none",
+          border: "none",
+          color: "#2f71e5",
+          appearance: "none",
+          padding: "0",
+          fontFamily: "Roboto, sans-serif",
+          fontSize: "18px",
+          fontWeight: "400",
+          display: "inline-block",
+          textAlign: "left",
+          marginTop: "12px",
+          cursor: "pointer",
+        }}
         onClick={(e) => {
           e.preventDefault();
           onSignInClick();
