@@ -20,6 +20,14 @@
   border-radius: 16px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align all children to the left */
+}
+
+.success-modal__content {
+  width: 100%; /* Ensure it takes full width of container */
+  text-align: left; /* Explicitly left-align content */
 }
 
 .success-modal__close-button {
@@ -51,21 +59,6 @@
   white-space: pre-wrap;
 }
 
-.success-modal__sign-in {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: #2f71e5;
-  cursor: pointer;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  display: block;
-  text-align: left;
-  margin-top: 12px;
-}
-
 @media screen and (max-width: 768px) {
   .success-modal__close-button {
     right: -30px;
@@ -85,11 +78,6 @@
     font-size: 20px;
     margin-bottom: 20px;
   }
-
-  .success-modal__sign-in {
-    font-size: 16px;
-    margin-top: 20px;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -104,10 +92,5 @@
     width: 24px;
     height: 24px;
     background-size: 24px 24px;
-  }
-
-  .success-modal__sign-in {
-    font-size: 16px;
-    margin-top: 16px;
   }
 }
