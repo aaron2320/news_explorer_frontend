@@ -11,7 +11,6 @@ function ModalWithForm({
   isOpen,
   hideDefaultButton = false,
 }) {
-  // Handle escape key press
   useEffect(() => {
     const handleEscClose = (e) => {
       if (e.key === "Escape") {
@@ -28,7 +27,6 @@ function ModalWithForm({
     };
   }, [isOpen, onClose]);
 
-  // Handle click on overlay
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
